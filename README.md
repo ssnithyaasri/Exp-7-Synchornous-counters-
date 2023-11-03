@@ -51,11 +51,41 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 
 
 ### PROGRAM 
-/*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by: NITHYAA SRI S S
+RegisterNumber: 212222230100 
+```
+### UP COUNTER:
+
+module exp6a(clk,A);
+input clk;
+output reg [3:0]A;
+always @(posedge clk)
+begin
+	A[3]=(((A[0])&(A[1])&(A[2]))^A[3]);
+	A[2]=(((A[0])&(A[1]))^A[2]);
+	A[1]=(A[0])^A[1];
+	A[0]=A[0]^1;
+end
+endmodule
+
+
+### DOWN COUNTER:
+
+module exp6b(clk,A);
+input clk;
+output reg [3:0]A;
+always@(posedge clk)
+begin
+	A[3]=(((~A[0])&(~A[1])&(~A[2]))^A[3]);
+	A[2]=(((~A[0])&(~A[1]))^A[2]);
+	A[1]=(~A[0])^A[1];
+	A[0]=(~A[0])^1;
+end
+endmodule
+
+```
+
 
 
 
@@ -63,9 +93,12 @@ RegisterNumber:
 
 
 ### RTL LOGIC UP COUNTER AND DOWN COUNTER  
+## UP COUNTER:
+![image](https://github.com/ssnithyaasri/Exp-7-Synchornous-counters-/assets/119122478/0a2d839d-9829-4463-b7ed-ce0694eea410)
 
+## DOWN COUNTER:
 
-
+![image](https://github.com/ssnithyaasri/Exp-7-Synchornous-counters-/assets/119122478/f22db843-408b-4ab1-b17d-5e695854bd79)
 
 
 
@@ -74,11 +107,26 @@ RegisterNumber:
 
 ### TIMING DIGRAMS FOR COUNTER  
 
+## UP COUNTER:
+![image](https://github.com/ssnithyaasri/Exp-7-Synchornous-counters-/assets/119122478/62a79d4d-ae91-439d-93b7-74f97b5395b3)
+
+
+
+## DOWN COUNTER:
+![image](https://github.com/ssnithyaasri/Exp-7-Synchornous-counters-/assets/119122478/286b3cc2-93f2-44ff-9554-5e911e44cd3e)
+
 
 
 
 
 ### TRUTH TABLE 
+## UP COUNTER:
+
+![image](https://github.com/ssnithyaasri/Exp-7-Synchornous-counters-/assets/119122478/917302c1-be27-4e5d-8520-919bbcd37284)
+
+## DOWN COUNTER:
+![image](https://github.com/ssnithyaasri/Exp-7-Synchornous-counters-/assets/119122478/f57eff44-c454-4e0c-a3a4-e3c85aab6194)
+
 
 
 
@@ -86,3 +134,4 @@ RegisterNumber:
 
 
 ### RESULTS 
+Thus Synchornous counters up counter and down counter circuit are studied and the truth table for different logic gates are verified.
